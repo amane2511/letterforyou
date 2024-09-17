@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pigeon Carrying a Letter</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e0f7fa;
+            overflow: hidden;
+        }
+
+        .pigeon {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/5/50/Pigeon_clip_art.svg') no-repeat center/contain;
+            animation: fly 5s infinite linear;
+        }
+
+        @keyframes fly {
+            0% {
+                transform: translateX(-300px) translateY(0);
+            }
+            50% {
+                transform: translateX(300px) translateY(-100px);
+            }
+            100% {
+                transform: translateX(-300px) translateY(0);
+            }
+        }
+
+        .letter {
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 40px;
+            background-color: white;
+            border: 2px solid black;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="pigeon">
+    <div class="letter">Click Me</div>
+</div>
+
+<script>
+    const letter = document.querySelector('.letter');
+
+    letter.addEventListener('click', function() {
+        alert('Wake up, September ended');
+    });
+</script>
+
+</body>
+</html>
